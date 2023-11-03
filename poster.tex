@@ -1,16 +1,4 @@
-% Unofficial BGU Poster template.
-% A fork of the UCPH Template https://www.overleaf.com/latex/templates/ucph-poster-template/kgxvdxjbrtpf
-% which is a fork of the UMich template https://www.overleaf.com/latex/templates/university-of-michigan-umich-poster-template/xpnqzzxwbjzc
-% which is a fork of the MSU template https://www.overleaf.com/latex/templates/an-unofficial-poster-template-for-michigan-state-university/wnymbgpxnnwd
-% which is a fork of https://www.overleaf.com/latex/templates/an-unofficial-poster-template-for-new-york-university/krgqtqmzdqhg
-% which is a fork of https://github.com/anishathalye/gemini
-% also refer to https://github.com/k4rtik/uchicago-poster
-
 \documentclass[final]{beamer}
-
-% ====================
-% Packages
-% ====================
 
 \usepackage[T1]{fontenc}
  \usepackage[utf8]{luainputenc}
@@ -25,12 +13,7 @@
 \pgfplotsset{compat=1.14}
 \usepackage{anyfontsize}
 
-% ====================
-% Lengths
-% ====================
 
-% If you have N columns, choose \sepwidth and \colwidth such that
-% (N+1)*\sepwidth + N*\colwidth = \paperwidth
 \newlength{\sepwidth}
 \newlength{\colwidth}
 \setlength{\sepwidth}{0.025\paperwidth}
@@ -38,9 +21,7 @@
 
 \newcommand{\separatorcolumn}{\begin{column}{\sepwidth}\end{column}}
 
-% ====================
-% Title
-% ====================
+
 
 \title{Rubik's Mathematics: A Twist on Numbers}
 
@@ -48,29 +29,17 @@
 
 \institute[shortinst]{University of Colorado Boulder}
 
-% ====================
-% Footer (optional)
-% ====================
+
 
 \footercontent{
   \href{https://github.com}{Github: https://github.com/sandsowkd} \hfill
 BGU 2023 \hfill
   \href{mailto:youremail@bgu.ac.il}{jehu1528@colorado.edu}}
-% (can be left out to remove footer)
 
-% ====================
-% Logo (optional)
-% ====================
 
-% use this to include logos on the left and/or right side of the header:
-% Left: institution
-% \logoright{\includegraphics[height=8cm]{logos/ucph_logo_jj.jpg}}
+
 \logoleft{\includegraphics[height=4.5cm]{logos/BoulderLogo.png}}
-% Right: funding agencies and other affilations 
-%\logoright{\includegraphics[height=7cm]{logos/NSF.eps}}
-% ====================
-% Body
-% ====================
+
 
 \begin{document}
 
@@ -81,27 +50,24 @@ BGU 2023 \hfill
 \begin{column}{\colwidth}
 
   \begin{block}{Abstract}
-    \large The Rubik's Cube, an iconic 3D puzzle, has captured the imagination of enthusiasts and mathematicians alike for decades. This poster delves into the mathematical intricacies of the Rubik's Cube. We investigate the cube's symmetry, its staggering number of possible permutations, and the use of computer aided proof-assistants to calculate the algorithms to solve the Rubik's Cube. Whether you're a puzzle enthusiast or a math aficionado, this poster invites you to embark on a fascinating journey into the world of Rubik's Cube mathematics.
+    \large The Rubik's Cube, an iconic 3D puzzle, has captured the imagination of enthusiasts and mathematicians alike for decades. This poster delves into the mathematical intricacies of the Rubik's Cube. We investigate the cube's symmetry, its staggering number of possible permutations, and the use of computer aided proof-assistants to calculate the algorithms to solve the Rubik's Cube. Whether you're a puzzle enthusiast or a math fanatic, this poster invites you to embark on a fascinating journey into the world of Rubik's Cube mathematics.
 
-    %\begin{figure}
-    %  \centering
-    %                \includegraphics[width=0.6\textwidth]{figures/results_fig.pdf}
-    %\end{figure}
 
   \end{block}
 
   \begin{block}{Combinations of a Rubik's Cube}
 
-    \large Nam vulputate nunc felis, non condimentum lacus porta ultrices. Nullam sed
-    sagittis metus. Etiam consectetur gravida urna quis suscipit.
+    \large There are three (four if you count the not-visible core) types of pieces:
 
     \begin{itemize} %Talk about centers/edges/corners
-      \item \textbf{Mauris tempor} risus nulla, sed ornare
-      \item \textbf{Libero tincidunt} a duis congue vitae
-      \item \textbf{Dui ac pretium} morbi justo neque, ullamcorper
+      \item \textbf{Corners:} 8 of these on each corner of the cube
+      \item \textbf{Edges:} 12 of these connecting adjacent corners
+      \item \textbf{Centers:} 6 of these on each face of the cube
     \end{itemize}
 
-    Eget augue porta, bibendum venenatis tortor.
+    There are $8!$ ways we can permute the corner pieces to the corners of a cube, and $12!$ ways we can permute the edge pieces into the 12 edge slots of a cube. There are $3^7$ ways we can orient $7$ of the corner pieces (the last one will be based upon the previous 7 orientations), and $2^{11}$ ways we can orient $11$ of the edge pieces, with the last one being determined after. We also have to divide by $2$, since some states are impossible, as each move involves an even number of piece swaps, so odd ones are impossible. This yields the final formula: \\
+
+    $$ \displaystyle\frac{8!\cdot 12! \cdot 3^6 \cdot 2^11}{2} = 43252003274489856000 $$ \\
 
     \begin{figure}
       \centering
