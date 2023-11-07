@@ -98,30 +98,28 @@
 
   \begin{block}{Solving a Rubik's Cube}
 
-    \large Vivamus congue volutpat elit non semper. Praesent molestie nec erat ac
-    interdum. In quis suscipit erat. \textbf{Phasellus mauris felis, molestie
-    ac pharetra quis}, tempus nec ante. Donec finibus ante vel purus mollis
-    fermentum. Sed felis mi, pharetra eget nibh a, feugiat eleifend dolor. Nam
-    mollis condimentum purus quis sodales. Nullam eu felis eu nulla eleifend
-    bibendum nec eu lorem. Vivamus felis velit, volutpat ut facilisis ac,
-    commodo in metus.
-
+    \large A popular method for speed-solving is CFOP(used by many world record holders) where you create a Center \textbf{Cross}, solve the First two layers(\textbf{F2L}), Orient the last layer(\textbf{OLL}), and Permute the last layer(\textbf{PLL}). 
+    We can figure out the maximum number of moves it would take for a solve using CFOP by going adding up the maximum steps of each step: 
     \begin{enumerate}
-      \item \textbf{Morbi mauris purus}, egestas at vehicula et, convallis
-        accumsan orci. Orci varius natoque penatibus et magnis dis parturient
-        montes, nascetur ridiculus mus.
-      \item \textbf{Cras vehicula blandit urna ut maximus}. Aliquam blandit nec
-        massa ac sollicitudin. Curabitur cursus, metus nec imperdiet bibendum,
-        velit lectus faucibus dolor, quis gravida metus mauris gravida turpis.
-      \item \textbf{Vestibulum et massa diam}. Phasellus fermentum augue non
-        nulla accumsan, non rhoncus lectus condimentum.
+      \item For the center cross, the maximum needed is eight
+      \item For F2L, it depends but the maximum is around 24-28
+      \item For OLL, we can get a maximum of 11
+      \item And finally for PLL, the maximum is 14
     \end{enumerate}
+    Across the four steps in CFOP we have a maximum of around 61 moves needed to solve a 3x3 Cube.
+
 
   \end{block}
 
   \begin{block}{God's Algorithm and Number}
 
-    \large Et rutrum ex euismod vel. Pellentesque ultricies, velit in fermentum
+    \large God's Algorithm is a term used to refer to the optimal algorithm used to solve a cube in the least moves possible 
+    while God's Number refers to the the number of moves in the worst case of God's Algorithm.
+    In 2010, God's Number was proven to be 20. 
+    
+    
+    
+    Et rutrum ex euismod vel. Pellentesque ultricies, velit in fermentum
     vestibulum, lectus nisi pretium nibh, sit amet aliquam lectus augue vel
     velit. Suspendisse rhoncus massa porttitor augue feugiat molestie. Sed
     molestie ut orci nec malesuada. Sed ultricies feugiat est fringilla
