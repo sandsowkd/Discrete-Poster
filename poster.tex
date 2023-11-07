@@ -125,14 +125,26 @@
     vestibulum, lectus nisi pretium nibh, sit amet aliquam lectus augue vel
     velit. Suspendisse rhoncus massa porttitor augue feugiat molestie. Sed
     molestie ut orci nec malesuada. Sed ultricies feugiat est fringilla
-    posuere.
+    posuere. \\
+    \begin{center}
+    \begin{tikzpicture}[scale=1.13]
+      \begin{axis}[xtick = {12,13,14,15,16,17,18,19,20},
+          ymin=0, ymax=100, xmin = 12, xmax = 21, xlabel = \# of moves,
+          area style, width=25cm,height=9cm, xticklabel style = {xshift=1.3cm}
+          ]
+        \tikzstyle{every node}=[font=\small]
+      \addplot+[ybar interval,mark=no] plot coordinates { (0, 0) (1, 0) (2, 0) (3, 0) (4,0) (5,0) (6,0)
+       (7,0) (8,0) (9,0) (10,0) (11,0) (12,0) (13,0) (14,0) (15, 0.2) (16, 2.5) (17, 27.7) (18, 67) (19, 3.5) (20,0) (21,0) };
+        \node[] at (axis cs: 16.5,10) {2.5\%};
+        \node[] at (axis cs: 17.5,36) {27.7\%};
+        \node[] at (axis cs: 18.5,76) {67\%};
+        \node[] at (axis cs: 19.5,12) {3.5\%};
+        \node[] at (axis cs: 20.5, 10) {<0.1\%};
+        \node[] at (axis cs: 14, 9) {<0.1\%};
 
-    \begin{figure}
-      \centering
-        \includegraphics[width=0.3\textwidth]{figures/dag.png}
-
-      \caption{Another figure caption.}
-    \end{figure}
+      \end{axis}
+      \end{tikzpicture}
+    \end{center}
 
   \end{block}
 
@@ -154,63 +166,53 @@
 
 \begin{column}{\colwidth}
 
-  \begin{exampleblock}{Statistics of Speed Cubing}
+  \begin{block}{Applications to Speed Cubing}
 
-    \large
-
-    $$
-    \int_{-\infty}^{\infty} e^{-x^2}\,dx = \sqrt{\pi}
-    $$
-
-    Interdum et malesuada fames $\{1, 4, 9, \ldots\}$ ac ante ipsum primis in
-    faucibus. Cras eleifend dolor eu nulla suscipit suscipit. Sed lobortis non
-    felis id vulputate.
-
-    \heading{A heading inside a block}
-
-    Praesent consectetur mi $x^2 + y^2$ metus, nec vestibulum justo viverra
-    nec. Proin eget nulla pretium, egestas magna aliquam, mollis neque. Vivamus
-    dictum $\mathbf{u}^\intercal\mathbf{v}$ sagittis odio, vel porta erat
-    congue sed. Maecenas ut dolor quis arcu auctor porttitor.
-
-    \heading{Another heading inside a block}
-
-    Sed augue erat, scelerisque a purus ultricies, placerat porttitor neque.
-    Donec $P(y \mid x)$ fermentum consectetur $\nabla_x P(y \mid x)$ sapien
-    sagittis egestas. Duis eget leo euismod nunc viverra imperdiet nec id
-    justo.
-
-  \end{exampleblock}
-
-  \begin{block}{What about larger Rubik's Cubes?}
-
-    \large Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-    inceptos himenaeos. Phasellus libero enim, gravida sed erat sit amet,
-    scelerisque congue diam. Fusce dapibus dui ut augue pulvinar iaculis.
+    \large There are many different methods for Speed Cubing, all aimed at Solving
+    the cube as fast as possible. This involves coming up with ways to use
+    less moves and using easily executed algorithms. Here are a couple:
 
     \begin{table}
       \centering
       \begin{tabular}{l r r c}
         \toprule
-        \textbf{First column} & \textbf{Second column} & \textbf{Third column} & \textbf{Fourth} \\
+        \textbf{Method} & \textbf{\# Turns} & \textbf{\# Algorithms} & \textbf{Average Times (s)} \\
         \midrule
-        Foo & 13.37 & 384,394 & $\alpha$ \\
-        Bar & 2.17 & 1,392 & $\beta$ \\
-        Baz & 3.14 & 83,742 & $\delta$ \\
-        Qux & 7.59 & 974 & $\gamma$ \\
+        Beginner & 80-100 & 15 & 30-120 \\
+        CFOP & 55-60 & 78 & 5-30 \\
+        Roux & 45-50 & 100+ & 5-20 \\
+        ZZ & 45-55 & 493 & 5-15 \\
         \bottomrule
       \end{tabular}
-      \caption{A table caption.}
     \end{table}
 
-    Donec quis posuere ligula. Nunc feugiat elit a mi malesuada consequat. Sed
-    imperdiet augue ac nibh aliquet tristique. Aenean eu tortor vulputate,
-    eleifend lorem in, dictum urna. Proin auctor ante in augue tincidunt
-    tempor. Proin pellentesque vulputate odio, ac gravida nulla posuere
-    efficitur. Aenean at velit vel dolor blandit molestie. Mauris laoreet
-    commodo quam, non luctus nibh ullamcorper in. Class aptent taciti sociosqu
-    ad litora torquent per conubia nostra, per inceptos himenaeos.
 
+  As more methods and algorithms get developed with the aid of computers,
+  speed-cube times have been getting lower considerably:
+
+  \begin{figure}
+    \centering
+      \includegraphics[width=1.0\textwidth]{logos/solveprogression.png}
+  \end{figure}
+
+  \end{block}
+
+  \begin{block}{What about larger Rubik's Cubes?}
+    
+    \large Unsurprisingly, the number of possible combinations of larger Rubik's Cube scale exponentially \\
+    
+    \begin{itemize}
+      \item \textbf{4x4:} 7.4 quattuordecillion ($7.5\cdot 10^{45}$) - 20s solve time
+      \item \textbf{5x5:} 283 trevigintillion ($283 \cdot 10^{72}$) - 38s solve time
+      \item \textbf{6x6:} Big number with 117 digits - 75s solve time
+      \item \textbf{7x7:} Big number with 165 digits - 110s solve time
+    \end{itemize}
+
+    The general formula for the combinations on an $n \times n$ cube is: \\
+
+    $$ \displaystyle 7! \cdot  3^6 \left( 24 \cdot 2^{10} \cdot 12!  \right)^{n \text{ mod} 2}
+    (24!)^{\lfloor \frac{n-2}{2} \rfloor} \left( \displaystyle\frac{24!}{4!^{6}} 
+    \right)^{\lfloor \left( \frac{n-2}{2} \right)^2 \rfloor} $$ \\
 
 
   \end{block}
