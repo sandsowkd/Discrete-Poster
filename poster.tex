@@ -43,14 +43,18 @@
 \begin{column}{\colwidth}
 
   \begin{block}{Abstract}
-    \large The Rubik's Cube, an iconic 3D puzzle, has captured the imagination of enthusiasts and mathematicians alike for decades. This poster delves into the mathematical intricacies of the Rubik's Cube. We investigate the cube's symmetry, its staggering number of possible permutations, and the use of computer aided proof-assistants to calculate the algorithms to solve the Rubik's Cube. Whether you're a puzzle enthusiast or a math fanatic, this poster invites you to embark on a fascinating journey into the world of Rubik's Cube mathematics.
+    \large The Rubik's Cube, an iconic 3D puzzle, has captured the imagination of enthusiasts and mathematicians 
+    alike for decades. This poster delves into the mathematical intricacies of the Rubik's Cube. We investigate the 
+    cube's symmetry, its staggering number of possible permutations, and the use of computer aided proofs to 
+    calculate the algorithms to solve the Rubik's Cube. %Whether you're a puzzle enthusiast or a math fanatic, this poster 
+    %invites you to embark on a fascinating journey into the world of Rubik's Cube mathematics.
 
 
   \end{block}
 
   \begin{block}{Combinations of a Rubik's Cube}
 
-    \large There are three (four if you count the not-visible core) types of pieces:
+    \large There are three visible types of pieces:
 
     \begin{itemize} %Talk about centers/edges/corners
       \item \textbf{Corners:} 8 of these on each corner of the cube
@@ -58,10 +62,15 @@
       \item \textbf{Centers:} 6 of these on each face of the cube
     \end{itemize}
 
-    There are $8!$ ways we can permute the corner pieces to the corners of a cube, and $12!$ ways 
-    we can permute the edge pieces into the 12 edge slots of a cube. There are $3^8$ ways we can orient 
-    the corner pieces and $2^{12}$ ways we can the edge pieces. We also have to divide by $12$, 
-    since some states are impossible. This yields the final formula: \\
+    Permutations on the Rubik's Cube: 
+
+    \begin{itemize} %Talk about centers/edges/corners
+      \item \textbf{8!} ways to permute corner pieces into their slots
+      \item \textbf{12!} ways to permute edge pieces into their slots
+      \item $\mathbf{3^8}$ ways to orient each corner piece
+      \item $\mathbf{2^{12}}$ ways to orient each edge piece
+    \end{itemize}
+    We also have to divide by $12$, since some states are impossible. \\
 
     $$ \displaystyle\frac{8!\cdot 12! \cdot 3^8 \cdot 2^{12}}{12} = 43252003274489856000 $$ \\
 
@@ -79,10 +88,20 @@
     %about 31 million seconds in a year, so it would take more than 1.3 trillion years. \\
     %Imagine we started doing this during the Dinosaur Age: we would only get to 2 quadrillion combinations. \\
     %We would have to repeat the process more than 20,000 times to reach all 43 quintillion combinations! \\
-    Imagine we had a dollar for each rubik's cube combination there was. If were to lay one layer of one dollar bills in
-    Colorado, it would take 25 trillion dollars. We would have to stack that another 2 million times to use all of our money. \\
-    The stack would be about the same height of the tallest building in Denver. In other words,
-    the money would cover all of Colorado in a layer as tall as a skyscraper.
+    %Imagine we had a dollar for each rubik's cube combination there was. If were to lay one layer of one dollar bills in
+    %Colorado, it would take 25 trillion dollars. We would have to stack that another 2 million times to use all of our money. \\
+    %The stack would be about the same height of the tallest building in Denver. In other words,
+    %the money would cover all of Colorado in a layer as tall as a skyscraper.
+
+    Imagine 43 Quintillion Dollar bills:
+
+    \begin{itemize}
+      \item One layer of bills over all of Colorado costs \$ 25 trillion
+      \item One stack of bills 800 feet tall costs \$ 2 million
+    \end{itemize}
+
+    Combined, it will cost about \$ 43 Quintillion
+
     \begin{figure}
       \centering
                     \includegraphics[width=0.9\textwidth]{logos/moneyvisual.png}
@@ -112,13 +131,15 @@
 
   \begin{block}{God's Algorithm and Number}
 
-    \large Naturally, people want to know how to solve the know the best ways to solve
-    a Rubik's cube. \textbf{God's algorithm} refers to the hypothetical perfect solving 
-    method for a Rubik's Cube, a sequence of moves that would guarantee the shortest possible 
-    solution for any scrambled configuration. \textbf{God's number} represents the maximum 
-    number of moves required to solve the most challenging possible Rubik's Cube configuration. 
-    This value was proven to be 20 in July 2010 after extensive computer-assisted calculations 
-    and mathematical research, providing a fundamental benchmark for the cube's complexity.
+    %\large Naturally, people want to know how to solve the know the best ways to solve
+    %a Rubik's cube. 
+    \textbf{God's algorithm} - hypothetical perfect solving method for a Rubik's Cube  \\
+    %a sequence of moves that would guarantee the shortest possible solution for any scrambled configuration. 
+    \textbf{God's number} - maximum number of moves required to solve any Rubik's Cube configuration. \\
+    \begin{itemize}
+      \item Proven to be 20 after 35 core-years of computation in July 2010
+    \end{itemize}
+
     \begin{center}
     \begin{tikzpicture}[scale=1.13]
       \begin{axis}[xtick = {12,13,14,15,16,17,18,19,20},
@@ -141,17 +162,22 @@
 
   \end{block}
 
-  \begin{block}{Proof Assistants/Computer Aided proof}
+  \begin{block}{Other Computer Aided proofs}
 
-    \large Obviously, it would be impossible for humans to go through all 43 Quintillion
-    combinations of a Rubik's cube. However, computers have been able to use exhaustive search
-    and other techniques to determine God's number. Other proofs that have used computers include:
-
+    %\large Obviously, it would be impossible for humans to go through all 43 Quintillion
+    %combinations of a Rubik's cube. However, computers have been able to use exhaustive search
+    %and other techniques to determine God's number. Other proofs that have used computers include:
+    
     \begin{itemize}
-      \item \textbf{Connect Four:} Proved the game is deterministic
-      \item \textbf{Kepler's Conjecture:} Optimal sphere-packing in 3 Dimensions
+      \item \textbf{Connect Four:} Always win for first player
       \item \textbf{Sudoku:} You need at least 12 clues to solve a Sudoku Puzzle
+      \item \textbf{Chess:} Analyzing Endgames
+      \item \textbf{Chopsticks:} Always draw if played perfectly
+      \item \textbf{Kepler's Conjecture:} Optimal sphere-packing in 3 Dimensions
+      \item \textbf{Four Color Theorem:} Proved the conjecture
     \end{itemize}
+
+    %Add picture if there's enough space
 
   \end{block}
 
@@ -163,10 +189,15 @@
 
   \begin{block}{Applications to Speed Cubing}
 
-    \large There are many different methods for Speed Cubing, all aimed at Solving
-    the cube as fast as possible. This involves coming up with ways to use
-    less moves and using easily executed algorithms. Here are a couple:
+    %\large There are many different methods for Speed Cubing, all aimed at Solving
+    %the cube as fast as possible. This involves coming up with ways to use
+    %less moves and using easily executed algorithms. Here are a couple:
 
+    \large \textbf{Speedcubing:} Solving scrambled Rubik's cube as fast as possible
+
+    \begin{center}
+      \textbf{Table of different solving methods}
+    \end{center}
     \begin{table}
       \centering
       \begin{tabular}{l r r c}
@@ -185,6 +216,10 @@
   As more methods and algorithms get developed with the aid of computers,
   speed-cube times have been getting lower considerably:
 
+  \begin{center}
+    \textbf{Evolution of 3x3 Rubik's Cube WR}
+  \end{center}
+
   \begin{figure}
     \centering
       \includegraphics[width=1.0\textwidth]{logos/solveprogression.png}
@@ -194,7 +229,7 @@
 
   \begin{block}{What about larger Rubik's Cubes?}
     
-    \large Unsurprisingly, the number of possible combinations of larger Rubik's Cube scale exponentially \\
+    \large The number of possible combinations of larger Rubik's Cube scale exponentially \\
     
     \begin{itemize}
       \item \textbf{4x4:} 7.4 quattuordecillion ($7.5\cdot 10^{45}$) - 20s solve time
