@@ -10,6 +10,7 @@
 \usepackage{booktabs}
 \usepackage{tikz}
 \usepackage{pgfplots}
+\usepgfplotslibrary{statistics}
 \pgfplotsset{compat=1.14}
 %\usepackage{anyfontsize}
 
@@ -98,16 +99,77 @@
 
   \begin{block}{Solving a Rubik's Cube}
 
+<<<<<<< Updated upstream
     \large A popular method for speed-solving is CFOP(used by many world record holders) where you create a Center \textbf{Cross}, solve the First two layers(\textbf{F2L}), Orient the last layer(\textbf{OLL}), and Permute the last layer(\textbf{PLL}). 
     We can figure out the maximum number of moves it would take for a solve using CFOP by going adding up the maximum steps of each step: 
+=======
+    \large CFOP solving method: 
+    \begin{figure}
+      \centering
+      \includegraphics[scale = 2]{logos/CFOP.PNG}
+    \end{figure}
+>>>>>>> Stashed changes
     \begin{enumerate}
-      \item For the center cross, the maximum needed is eight
-      \item For F2L, it depends but the maximum is around 24-28
-      \item For OLL, we can get a maximum of 11
-      \item And finally for PLL, the maximum is 14
+      \item[C] Center Cross - 8 moves max
+      \item[F] First 2 Layers(F2L) - 24-28 moves max
+      \item[O] Orientation of Last Layer(OLL) - 11 moves max
+      \item[P] Permutation of Last Layer(PLL) - 14 moves max
     \end{enumerate}
+<<<<<<< Updated upstream
     Across the four steps in CFOP we have a maximum of around 61 moves needed to solve a 3x3 Cube.
 
+=======
+    Across the four steps in CFOP we have about 60 moves needed to solve a 3x3 Cube.
+    
+    \begin{tikzpicture}
+      \begin{axis} [
+        height=12.0cm, width=25.0cm,
+        xmin=0, xmax=50, xtick={0,5,10,15,...,50},
+        ytick={1,2,3,4},
+        yticklabels={P,O,F,C},
+        legend style={at={(0.5,-0.2)}, anchor=north, legend columns=-1},
+        ymin=0,ymax=5,
+        /pgfplots/boxplot/box extend=0.3
+    ]
+        \addplot+ [
+        boxplot prepared={
+          median=15,
+          upper quartile=16,
+          lower quartile=13,
+          upper whisker=24,
+          lower whisker=2,
+        },
+        ] coordinates {};
+        \addplot+ [
+        boxplot prepared={
+          median=10,
+          upper quartile=12,
+          lower quartile=8,
+          upper whisker=18,
+          lower whisker=4,
+        },
+        ] coordinates {};
+        \addplot+ [
+        boxplot prepared={
+          median=30,
+          upper quartile=33,
+          lower quartile=25,
+          upper whisker=48,
+          lower whisker=4,
+        },
+        ] coordinates {};
+        \addplot+ [
+        boxplot prepared={
+          median=6,
+          upper quartile=8,
+          lower quartile=5,
+          upper whisker=13,
+          lower whisker=1,
+        },
+        ] coordinates {};
+      \end{axis}
+    \end{tikzpicture}
+>>>>>>> Stashed changes
 
   \end{block}
 
