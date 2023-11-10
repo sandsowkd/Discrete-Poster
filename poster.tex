@@ -117,15 +117,25 @@
 
   \begin{block}{Solving a Rubik's Cube}
 
-    \large VA popular method for speed-solving is CFOP(used by many world record holders) where you create a Center \textbf{Cross}, solve the First two layers(\textbf{F2L}), Orient the last layer(\textbf{OLL}), and Permute the last layer(\textbf{PLL}). 
-    We can figure out the maximum number of moves it would take for a solve using CFOP by going adding up the maximum steps of each step: 
+    
+    \large A popular method for speed-solving is CFOP where you create a Center \textbf{Cross}, solve the 
+    First two layers(\textbf{F2L}), Orient the last layer(\textbf{OLL}), and Permute the last layer(\textbf{PLL}). 
+   Maximum turns for each step: 
+
     \begin{enumerate}
-      \item For the center cross, the maximum needed is eight
-      \item For F2L, it depends but the maximum is around 24-28
-      \item For OLL, we can get a maximum of 11
-      \item And finally for PLL, the maximum is 14
+      \item[\textbf{C}] Center Cross - 8 moves
+      \item[\textbf{F}] First 2 Layers(F2L) - 28 moves
+      \item[\textbf{O}] Orientation of Last Layer(OLL) - 11 moves
+      \item[\textbf{P}] Permutation of Last Layer(PLL) - 14 moves
     \end{enumerate}
+
     Across the four steps in CFOP we have about 60 moves needed to solve a 3x3 Cube.
+
+    \large CFOP solving method: 
+    \begin{figure}
+      \centering
+      \includegraphics[scale = 0.8]{logos/CFOP.jpg}
+    \end{figure}
 
   \end{block}
 
@@ -162,7 +172,7 @@
 
   \end{block}
 
-  \begin{block}{Other Computer Aided proofs}
+  \begin{block}{Other Computer Aided Proofs}
 
     %\large Obviously, it would be impossible for humans to go through all 43 Quintillion
     %combinations of a Rubik's cube. However, computers have been able to use exhaustive search
@@ -176,6 +186,13 @@
       \item \textbf{Kepler's Conjecture:} Optimal sphere-packing in 3 Dimensions
       \item \textbf{Four Color Theorem:} Proved the conjecture
     \end{itemize}
+
+    \begin{center}
+      \begin{figure}
+        \centering 
+        \includegraphics[scale = 0.5]{logos/robot chess.jpeg}
+      \end{figure}
+    \end{center}
 
     %Add picture if there's enough space
 
